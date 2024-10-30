@@ -1,0 +1,83 @@
+
+<body>
+    <div class="sidebar">
+        <h2>Mon Etab</h2>
+        <hr>
+        <ul>
+            <li>
+                <a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Tableau de bord</a>
+            </li>
+            <li>
+                <a href="students"><i class="fas fa-user-graduate"></i> Élèves</a>
+            </li>
+            <li>
+                <a href="teachers"><i class="fas fa-chalkboard-teacher"></i> Professeurs</a>
+            </li>
+            <li class="active">
+                <a href="users"><i class="fa-solid fa-user"></i> utilisateurs</a>
+            </li>
+            <li>
+                <a href="rapport"><i class="fas fa-chart-line"></i> Rapport</a>
+            </li>
+        </ul>
+        <hr style="margin-top:270px;">
+        <ul>
+            <li>
+                <a href="logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content1">
+        <div class="back-button">
+            <h1 style="color:black;">Liste des Utilisateurs</h1>
+            <a href="/add-user"><i class="fas fa-arrow-left"></i>Nouveau utilisateur</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pseudo</th>
+                    <th>Date de création</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Admin</td>
+                    <td>16/08/2024</td>
+                    <td>
+                        <a href="edit-user" style="background-color: rgba(255, 217, 0, 0.897);">Modifier</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>User2</td>
+                    <td>16/08/2024</td>
+                    <td>
+                        <a href="edit-user" style="background-color: rgba(255, 217, 0, 0.897);">Modifier</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function confirmerSuppression(event) {
+            event.preventDefault(); // Empêche l'action par défaut du bouton
+        
+            // Afficher une boîte de confirmation
+            const confirmation = confirm("Attention, vous êtes sur le point de supprimer cet utilisateur ! Voulez-vous vraiment continuer ?");
+        
+            // Si l'utilisateur clique sur "OK", la suppression est confirmée
+            if (confirmation) {
+                // Ajoutez ici le code pour supprimer l'élève
+                alert('L\'utilisateur a été supprimé.');
+            } else {
+                // Si l'utilisateur clique sur "Annuler", la suppression est annulée
+                alert('Suppression annulée.');
+            }
+        }
+        
+        // Attacher l'événement de clic aux boutons "Supprimer"
+        document.querySelectorAll('button[style*="rgb(212, 21, 21)"]').forEach(button => {
+            button.addEventListener('click', confirmerSuppression);
+        });
+        </script>
+</body>

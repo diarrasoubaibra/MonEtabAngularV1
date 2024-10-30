@@ -1,0 +1,28 @@
+<body style="background-color: #555;">
+    <div class="container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="image/logo.png" alt="Logo" />
+                <h1>Mon Etab</h1>
+            </div>
+                <form [formGroup]="formLogin" method="" (ngSubmit)="onSubmit()">
+                <div class="input-group">
+                    <label for="username">Identifiant</label>
+                    <input type="text" id="username" name="username" formControlName="username" required>
+                    <ng-container *ngIf="isInvalidInput(formLogin.get('username')!)">
+                        Identifiant est requis.
+                      </ng-container>
+                </div>
+                <div class="input-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" formControlName="password" required>
+                    <ng-container *ngIf="isInvalidInput(formLogin.get('password')!)">
+                        Mot de passe est requis.
+                      </ng-container>
+        
+                </div>
+                <button type="submit" class="login-btn" [disabled]="formLogin.invalid">Connexion</button>
+            </form>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,33 @@
+<body>
+    <div class="form-container">
+        <h1>Modifier un utilisateur</h1>
+      
+        <form [formGroup]="formEditUser" (ngSubmit)="onSubmit()">
+      
+          <div class="form-group">
+            <label for="pseudo">Pseudo</label>
+            <input type="text" id="pseudo" formControlName="pseudo">
+            <div *ngIf="isInvalidInput('pseudo')">Pseudo est requis.</div>
+          </div>
+      
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" formControlName="password">
+            <div *ngIf="isInvalidInput('password')">Mot de passe est requis.</div>
+          </div>
+      
+          <div class="form-group">
+            <label for="confirmPassword">Confirmez le mot de passe</label>
+            <input type="password" id="confirmPassword" formControlName="confirmPassword">
+            <div *ngIf="isInvalidInput('confirmPassword')">Confirmation du mot de passe est requise.</div>
+          </div>
+      
+          <div class="form-actions">
+            <button type="button" class="btn-cancel" (click)="formEditUser.reset()">Annuler</button>
+            <button type="submit" class="btn-save" [disabled]="formEditUser.invalid">Enregistrer</button>
+          </div>
+      
+        </form>
+      </div>
+      
+</body>

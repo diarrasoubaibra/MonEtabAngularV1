@@ -1,0 +1,103 @@
+<body>
+    <div class="sidebar">
+        <h2>Mon Etab</h2>
+        <hr>
+        <ul>
+            <li>
+                <a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Tableau de bord</a>
+            </li>
+            <li class="active">
+                <a href="students"><i class="fas fa-user-graduate"></i> Élèves</a>
+            </li>
+            <li>
+                <a href="teachers"><i class="fas fa-chalkboard-teacher"></i> Professeurs</a>
+            </li>
+            <li>
+                <a href="users"><i class="fa-solid fa-user"></i> utilisateurs</a>
+            </li>
+            <li>
+                <a href="rapport"><i class="fas fa-chart-line"></i> Rapport</a>
+            </li>
+        </ul>
+        <hr style="margin-top:270px;">
+        <ul>
+            <li>
+                <a href="logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content1">
+        <div class="back-button">
+            <h1 style="color:black;">Liste des élèves</h1>
+            <a href="add-student"><i class="fas fa-arrow-left"></i>Nouveau élève</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Genre</th>
+                    <th>Classe</th>
+                    <th>Matricule</th>
+                    <th>Age</th>
+                    <th>Téléphone</th>
+                    <th>Ville</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>NDOFI</td>
+                    <td>George</td>
+                    <td>Homme</td>
+                    <td>Te</td>
+                    <td>030708000</td>
+                    <td>25</td>
+                    <td>0784545498</td>
+                    <td>Abidjan</td>
+                    <td>
+                        <a href="modifier_eleve.html" style="background-color: rgba(255, 217, 0, 0.897);">Modifier</a>
+                        <button style="background-color: rgb(212, 21, 21);">Supprimer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>NONE</td>
+                    <td>Suli</td>
+                    <td>Femme</td>
+                    <td>2nd</td>
+                    <td>030708000</td>
+                    <td>22</td>
+                    <td>0224545498</td>
+                    <td>Abidjan</td>
+                    <td>
+                        <a href="modifier_eleve.html" style="background-color: rgba(255, 217, 0, 0.897);">Modifier</a>
+                        <button style="background-color: rgb(212, 21, 21);">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="scripte.js"></script>
+    <script>
+        function confirmerSuppression(event) {
+            event.preventDefault(); // Empêche l'action par défaut du bouton
+        
+            // Afficher une boîte de confirmation
+            const confirmation = confirm("Attention, vous êtes sur le point de supprimer cet élève ! Voulez-vous vraiment continuer ?");
+        
+            // Si l'utilisateur clique sur "OK", la suppression est confirmée
+            if (confirmation) {
+                // Ajoutez ici le code pour supprimer l'élève
+                alert('L\'élève a été supprimé.');
+            } else {
+                // Si l'utilisateur clique sur "Annuler", la suppression est annulée
+                alert('Suppression annulée.');
+            }
+        }
+        
+        // Attacher l'événement de clic aux boutons "Supprimer"
+        document.querySelectorAll('button[style*="rgb(212, 21, 21)"]').forEach(button => {
+            button.addEventListener('click', confirmerSuppression);
+        });
+        </script>
+</body>

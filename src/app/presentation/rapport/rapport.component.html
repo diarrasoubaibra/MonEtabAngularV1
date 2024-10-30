@@ -1,0 +1,57 @@
+<body>
+    <div class="sidebar">
+        <h2>Mon Etab</h2>
+        <hr>
+        <ul>
+            <li class="active">
+                <a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Tableau de bord</a>
+            </li>
+            <li>
+                <a href="/students"><i class="fas fa-user-graduate"></i> Élèves</a>
+            </li>
+            <li>
+                <a href="/teachers"><i class="fas fa-chalkboard-teacher"></i> Professeurs</a>
+            </li>
+            <li>
+                <a href="/users"><i class="fa-solid fa-user"></i> utilisateurs</a>
+            </li>
+            <li>
+                <a href="/rapport"><i class="fas fa-chart-line"></i> Rapport</a>
+            </li>
+        </ul>
+        <hr style="margin-top:270px;">
+        <ul>
+            <li>
+                <a href="/logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="back-button" style="justify-content: flex-end;" >
+            <a href="students"><i class="fas fa-arrow-left"></i> Retour</a>
+        </div>
+
+        <div class="form-container">
+            <h1>Impresion Rapport</h1>
+
+            <div class="form-group">
+                <label for="classe">Sélectionner une classe</label>
+                <select id="classe" name="classe">
+                    <option value="6eme">6ème</option>
+                    <option value="5eme">5ème</option>
+                    <option value="4eme">4ème</option>
+                    <option value="3eme">3ème</option>
+                    <option value="2nde">2nde</option>
+                    <option value="1ere">1ère</option>
+                    <option value="terminale">Terminale</option>
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <button class="btn-cancel" onclick="confirmCancel()">Générer format PDF</button>
+                <button class="btn-save">Générer format Excel</button>
+            </div>
+        </div>
+    </div>
+</body>
